@@ -46,4 +46,12 @@ public class UserController {
         return user.map(ResponseEntity::ok)
                    .orElse(ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/update-check")
+    public ResponseEntity<String> checkUpdate() {
+        String response = "<h1>MSA-USER : GitOps Implemented!</h1>";
+        return ResponseEntity.ok()
+            .header("Content-Type", "text/html")
+            .body(response);
+    }
 }
